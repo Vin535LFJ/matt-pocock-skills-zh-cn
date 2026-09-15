@@ -18,6 +18,10 @@
 
 ## 30 秒安装
 
+<p align="center">
+  <img src="./assets/support_img.png" alt="支持的 AI 工具" width="300">
+</p>
+
 ```bash
 npx skills@latest add vinvcn/mattpocock-skills-zh-CN
 ```
