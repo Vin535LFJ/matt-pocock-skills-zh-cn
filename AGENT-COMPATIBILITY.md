@@ -153,12 +153,12 @@ handoff ────────▶ （"suggested skills" 占位，无具体目�
 
 | 项                 | 值                                                                                                             |
 | ----------------- | ------------------------------------------------------------------------------------------------------------- |
-| 仓库                | `https://github.com/Vin535LFJ/mattpocock-skills-zh-CN-custom`（公开）                                             |
+| 仓库                | `https://github.com/Vin535LFJ/matt-pocock-skills-zh-cn`（公开）                                             |
 | 默认分支              | `main`                                                                                                        |
 | engineering 技能路径  | `skills/engineering/<name>/SKILL.md`                                                                          |
 | productivity 技能路径 | `skills/productivity/<name>/SKILL.md`                                                                         |
-| 安装（多 agent）       | `npx skills@latest add Vin535LFJ/mattpocock-skills-zh-CN-custom -s <空格分隔的技能名> -a <agent...> -y --copy`        |
-| 列表校验              | `npx skills@latest add Vin535LFJ/mattpocock-skills-zh-CN-custom --list` → 期望 `Found 14 skills`                |
+| 安装（多 agent）       | `npx skills@latest add Vin535LFJ/matt-pocock-skills-zh-cn -s <空格分隔的技能名> -a <agent...> -y --copy`        |
+| 列表校验              | `npx skills@latest add Vin535LFJ/matt-pocock-skills-zh-cn --list` → 期望 `Found 14 skills`                |
 | 消费者锁文件            | 安装后生成 `skills-lock.json`（记录 `source` / `sourceType` / `skillPath` / `computedHash`），**它是消费者侧的安装锁，不是技能源的发布清单** |
 | 技能源自身的发布索引        | `.claude-plugin/plugin.json` 的 `skills` 数组（14 条）                                                              |
 
@@ -167,7 +167,7 @@ handoff ────────▶ （"suggested skills" 占位，无具体目�
 - **`-s` / `--skill` 是变长参数，必须空格分隔**：`-s a b c`。**逗号会被当成一个名字** ⇒ `No matching skills found`。
 - 安装须**显式**指定 `-a <agent>` + `--copy` + `-y`：`--copy` 避免 Windows 符号链接问题，`-y` 跳过确认。
 - **Node 名义要求 vs 实测**：`skills@1.7.1` 的 `engines.node` = `>=22.20.0`；本机实测运行于 **v22.22.2**。
-- **先 `--list` 断言**：`npx skills@latest add Vin535LFJ/mattpocock-skills-zh-CN-custom --list` → 期望**恰为 14**。
+- **先 `--list` 断言**：`npx skills@latest add Vin535LFJ/matt-pocock-skills-zh-cn --list` → 期望**恰为 14**。
 
 ### 6.2 窗口 B 的可安装时机（技能包 vs 文档，分开陈述）
 
@@ -206,7 +206,7 @@ handoff ────────▶ （"suggested skills" 占位，无具体目�
 
 | #   | 案例                                                                                                                                     | 期望                                                               | 层级           |
 | --- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------------ |
-| A1  | `npx skills@latest add Vin535LFJ/mattpocock-skills-zh-CN-custom --list`                                                                | 输出 `Found 14 skills`，且不含 `translate-skill`                       | ✅ 已测         |
+| A1  | `npx skills@latest add Vin535LFJ/matt-pocock-skills-zh-cn --list`                                                                | 输出 `Found 14 skills`，且不含 `translate-skill`                       | ✅ 已测         |
 | A2  | `find skills -name SKILL.md \| wc -l`                                                                                                  | `14`                                                             | ✅ 已测         |
 | A3  | `grep -rl "本地回填" skills/ \| wc -l`                                                                                                     | `4`（implement / code-review / diagnosing-bugs / grilling）        | ✅ 已测         |
 | A4  | 安装到 `-a codex -a claude-code`                                                                                                          | 两目录各 37 个技能，且与源逐字节一致                                             | ✅ 已测         |

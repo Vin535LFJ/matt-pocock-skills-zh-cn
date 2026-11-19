@@ -1,4 +1,6 @@
-# Matt Pocock Agent Skills 中文版
+# Matt Pocock Skills 中文定制发行版
+
+A Chinese-adapted and customized distribution of Matt Pocock's Agent Skills, including translation, verified backports, compatibility notes, and upstream synchronization.
 
 ## 为什么需要这个中文版？
 
@@ -31,7 +33,7 @@
 </p>
 
 ```bash
-npx skills@latest add Vin535LFJ/mattpocock-skills-zh-CN-custom
+npx skills@latest add Vin535LFJ/matt-pocock-skills-zh-cn
 ```
 
 选择你想安装的 skills，以及要安装到哪些 coding agents。首次安装时请确保选择 [`/setup-matt-pocock-skills`](./skills/engineering/setup-matt-pocock-skills/SKILL.md)，然后在 agent 中运行它来完成 issue tracker、labels 和 docs 目录配置。
@@ -39,7 +41,7 @@ npx skills@latest add Vin535LFJ/mattpocock-skills-zh-CN-custom
 或者在 Claude Code 中运行：
 
 ```
-/plugin marketplace add Vin535LFJ/mattpocock-skills-zh-CN-custom
+/plugin marketplace add Vin535LFJ/matt-pocock-skills-zh-cn
 /plugin install mattpocock-skills@mattpocock
 ```
 
@@ -71,7 +73,7 @@ npx skills@latest add Vin535LFJ/mattpocock-skills-zh-CN-custom
 1. 运行 skills.sh installer：
 
 ```bash
-npx skills@latest add Vin535LFJ/mattpocock-skills-zh-CN-custom
+npx skills@latest add Vin535LFJ/matt-pocock-skills-zh-cn
 ```
 
 2. 选择你想安装的 skills，以及要安装到哪些 coding agents。**确保选择 `/setup-matt-pocock-skills`**。
@@ -90,14 +92,14 @@ npx skills@latest add Vin535LFJ/mattpocock-skills-zh-CN-custom
 在 Claude Code 中运行：
 
 ```
-/plugin marketplace add Vin535LFJ/mattpocock-skills-zh-CN-custom
+/plugin marketplace add Vin535LFJ/matt-pocock-skills-zh-cn
 /plugin install mattpocock-skills@mattpocock
 ```
 
 或在 shell 中运行：
 
 ```bash
-claude plugin marketplace add Vin535LFJ/mattpocock-skills-zh-CN-custom
+claude plugin marketplace add Vin535LFJ/matt-pocock-skills-zh-cn
 claude plugin install mattpocock-skills@mattpocock
 ```
 
@@ -105,10 +107,10 @@ claude plugin install mattpocock-skills@mattpocock
 
 两种安装方式代表两种使用取向，只选其一；两个都装会让每个 skill 被安装两次：
 
-- **[skills.sh](https://skills.sh/Vin535LFJ/mattpocock-skills-zh-CN-custom)** 会把 skills 复制进项目，方便你修改、定制，把它们变成自己的东西。
+- **[skills.sh](https://skills.sh/Vin535LFJ/matt-pocock-skills-zh-cn)** 会把 skills 复制进项目，方便你修改、定制，把它们变成自己的东西。
 - **Plugin** 把它们作为受管理的只读 bundle 安装，随新版本发布统一更新：是订阅而不是 fork，适合只想直接使用并持续跟进更新的用户。
 
-> 使用 Codex 或其他 agent？[skills.sh installer](https://skills.sh/Vin535LFJ/mattpocock-skills-zh-CN-custom) 已经可以把这些 skills 安装到 Codex 和其他兼容 Agent Skills 的 harnesses；目前尚未提供原生 Codex plugin。
+> 使用 Codex 或其他 agent？[skills.sh installer](https://skills.sh/Vin535LFJ/matt-pocock-skills-zh-cn) 已经可以把这些 skills 安装到 Codex 和其他兼容 Agent Skills 的 harnesses；目前尚未提供原生 Codex plugin。
 
 ### 为什么这些 Skills 存在
 

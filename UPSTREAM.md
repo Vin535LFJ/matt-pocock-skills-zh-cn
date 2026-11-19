@@ -6,7 +6,7 @@
 |---|---|---|
 | 英文上游 | [`mattpocock/skills`](https://github.com/mattpocock/skills) | Matt Pocock 原始技能仓库（英文） |
 | 中文版上游 | [`vinvcn/mattpocock-skills-zh-CN`](https://github.com/vinvcn/mattpocock-skills-zh-CN) | 简体中文本地化版，本仓库的**直接基线** |
-| 本仓库 | 本目录（`mattpocock-skills-zh-CN-custom`） | 中文版**全量发行副本**（37 个技能）+ **4 处**回填 |
+| 本仓库 | 本目录（`matt-pocock-skills-zh-cn`） | 中文版**全量发行副本**（37 个技能）+ **4 处**回填 |
 
 本仓库**以已经验证的中文版为基础**建立：克隆中文版上游（保留其 Git 历史），保留其**全部技能**，并额外应用 4 处已对照英文上游验证的修复。**未**从任何消费方安装镜像反向拼装源码。
 
@@ -29,13 +29,13 @@
 |---|---|---|
 | `upstream-zh` | `https://github.com/vinvcn/mattpocock-skills-zh-CN.git` | 可追溯的中文版上游（比较中文版变化、拉取翻译刷新） |
 | `upstream-en` | `https://github.com/mattpocock/skills.git` | 英文上游（重新推导回填差异） |
-| `origin` | `https://github.com/Vin535LFJ/mattpocock-skills-zh-CN-custom.git` | 本仓库自己的**公开**远程仓库，用于发布与日常推送 |
+| `origin` | `https://github.com/Vin535LFJ/matt-pocock-skills-zh-cn.git` | 本仓库自己的**公开**远程仓库，用于发布与日常推送 |
 
 > `origin` 已创建为 **GitHub 公开仓库**（账号 `Vin535LFJ`），默认分支为 `main`，当前可见性为 `public`。
 >
 > **推送认证（推荐做法）**：优先使用 SSH 或凭据助手，**不要**在命令行内联 token。
 >
-> - 首选：配置 GitHub SSH key，并使用 `git@github.com:Vin535LFJ/mattpocock-skills-zh-CN-custom.git`；
+> - 首选：配置 GitHub SSH key，并使用 `git@github.com:Vin535LFJ/matt-pocock-skills-zh-cn.git`；
 > - 或使用 `gh auth login`，由 `gh` 托管凭据；
 > - 或让 `git-credential-manager` 在首次推送时交互式保存 HTTPS 凭据。
 >
@@ -65,7 +65,7 @@
 - 简体中文本地化：`vinvcn/mattpocock-skills-zh-CN`。
 - 本仓库为上述两者的**衍生全量发行副本**（37 个技能 + 4 处回填），保留原始许可证与署名。
 
-**分发方式**：MIT 允许再分发与修改，但要求保留版权声明与许可证文本。本仓库现为**公开仓库**（`Vin535LFJ/mattpocock-skills-zh-CN-custom`），已保留 `LICENSE` / `LICENSE.zh-CN.md` 与署名，符合 MIT 的分发要求。发布前请再确认目标平台的许可与合规要求。
+**分发方式**：MIT 允许再分发与修改，但要求保留版权声明与许可证文本。本仓库现为**公开仓库**（`Vin535LFJ/matt-pocock-skills-zh-cn`），已保留 `LICENSE` / `LICENSE.zh-CN.md` 与署名，符合 MIT 的分发要求。发布前请再确认目标平台的许可与合规要求。
 
 ## 上游与 Mgtv-Pet-SDK 的关系
 
