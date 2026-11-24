@@ -2,6 +2,14 @@
 
 A Chinese-adapted and customized distribution of Matt Pocock's Agent Skills, including translation, verified backports, compatibility notes, and upstream synchronization.
 
+## 文档入口
+
+- **[docs/USER-GUIDE.md](docs/USER-GUIDE.md)** — 使用指南：37 个技能完整索引、安装、验证发现/调用、上游同步、回填维护、已知限制。
+- [AGENT-COMPATIBILITY.md](AGENT-COMPATIBILITY.md) — 跨 Agent 调用兼容方案（注意：其中部分「14 技能」数字已过时，以 USER-GUIDE 为准）。
+- [SYNC.md](SYNC.md) / [BACKPORTS.md](BACKPORTS.md) — 上游同步与 4 处回填。
+
+当前磁盘实测：**37 个技能**（engineering 20 / productivity 7 / misc 4 / in-progress 6），plugin 发布 31 个。
+
 ## 为什么需要这个中文版？
 
 - 更好适配中文大语言模型
