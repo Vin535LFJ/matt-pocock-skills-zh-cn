@@ -4,7 +4,7 @@ type: user-guide
 status: active
 owner: qwenwork
 created: 2026-11-23
-updated: 2026-11-23
+updated: 2026-11-25
 verified_at: 2026-11-23
 verified_against: matt-pocock-skills-zh-cn@7326522
 ---
@@ -110,6 +110,7 @@ npx skills@latest add Vin535LFJ/matt-pocock-skills-zh-cn
 | Claude Code | `/plugin` 列表出现 `mattpocock-skills`；或看 `.claude/skills/` 是否有目录 | 仓库内无安装产物，**未验证** |
 | Codex | 技能目录投放后，让 Agent 列出可用 skills | **未验证** |
 | 其他（Cursor/OpenCode/ZCode/VS Code Copilot） | 按各自 skills 目录约定 | **未验证** |
+| QwenWork（千问办公桌面版 2.1.0，Windows） | 手动投放到 `%USERPROFILE%\.qwenworkcn\skills\<技能名>\`；查设置里的技能清单；会话内用技能检索与加载工具 | **部分验证**（2026-11-25，`handoff`、`writing-for-agents`）：安装成功，设置清单即时可见；安装它的那个会话里检索与加载都失败（技能目录在会话开始时加载）；新会话未验证。记录见 [HOST-VERIFICATION-2026-11-25.md](HOST-VERIFICATION-2026-11-25.md) |
 
 安装器层面可以做一次「识别」验证（需 Node ≥22）：
 
@@ -138,6 +139,7 @@ npx skills@latest add . --list
 | OpenCode / Cursor / VS Code Copilot | 安装器列表点名 | **未验证** |
 | ZCode | `.zcode/skills/` | **未验证** |
 | WorkBuddy | 需手动投放，历史注册失败 | **未验证**（文档自认未测全流程） |
+| QwenWork | 手动投放到 `.qwenworkcn\skills\` | **部分验证**（2026-11-25）：安装与设置清单可见；会话内发现、调用失败；新会话未验证。`disable-model-invocation` 与 `agents/openai.yaml` 在该宿主上的效果未验证 |
 
 **硬依赖**（跨技能调用，来自 `AGENT-COMPATIBILITY.md:3.1`）：
 `grill-with-docs → grilling + domain-modeling`；`implement → tdd + code-review`；`tdd → codebase-design`；`retro → writing-for-agents`。
@@ -218,7 +220,7 @@ node scripts/audit-english.mjs
 
 ## 15. 已知限制（审计实测）
 
-1. **所有宿主兼容性均无仓库内证据**：没有 `.claude/`、`.agents/`、`.zcode/`、`skills-lock.json`、安装日志。
+1. **除 QwenWork 外，宿主兼容性均无仓库内证据**：没有 `.claude/`、`.agents/`、`.zcode/`、`skills-lock.json`、安装日志。QwenWork 有一份部分验证记录（[HOST-VERIFICATION-2026-11-25.md](HOST-VERIFICATION-2026-11-25.md)）：安装成功、设置清单可见，会话内发现与调用失败，新会话未验证。
 2. **安装器路径本机未验证**：Node v20.19.5 < `skills` CLI 要求 v22.20。
 3. **文档陈旧**：`AGENT-COMPATIBILITY.md` 多处仍写「14 技能」「7 个 user-invoked」，与 37 技能/22 user-invoked 冲突。
 4. **错误安装命令**：`skills/in-progress/README.md:12` 仍写 `npx skills@latest add vinvcn/mattpocock-skills-zh-CN`（指向上游，不是本仓库）。
@@ -231,7 +233,7 @@ node scripts/audit-english.mjs
 
 ## 附：完整 Skills 索引（37 个，磁盘实测）
 
-> 兼容状态统一为「未验证」：仓库内无任何宿主的安装/发现/调用证据。安装器可识别是另一层，不等于宿主可用。
+> 兼容状态：`handoff` 与 `writing-for-agents` 在 QwenWork 上为「部分验证」（见 [HOST-VERIFICATION-2026-11-25.md](HOST-VERIFICATION-2026-11-25.md)），其余为「未验证」：仓库内无其他宿主或其他技能的安装/发现/调用证据。安装器可识别是另一层，不等于宿主可用。
 > 入口均为仓库相对路径；`(user)` = 只能人工触发，`(model)` = 模型可自动触发。
 
 | # | Skill | 分类 | 用途 | 适用任务 | 兼容状态 | 使用入口 |
@@ -268,11 +270,11 @@ node scripts/audit-english.mjs
 | 30 | setup-pre-commit | misc / 配置 | Husky + lint-staged + 类型/测试 | 提交前检查 | 未验证 | `skills/misc/setup-pre-commit/SKILL.md` (model) |
 | 31 | grill-me | productivity / 需求 | 持续追问打磨计划/设计 | 方案压力测试 | 未验证 | `skills/productivity/grill-me/SKILL.md` (user) |
 | 32 | grilling | productivity / 需求 | 追问 primitive，逐分支收敛 | 设计树探索 | 未验证 | `skills/productivity/grilling/SKILL.md` (model) |
-| 33 | handoff | productivity / 协作 | 把对话压缩成交接文档 | 换会话/换 Agent | 未验证 | `skills/productivity/handoff/SKILL.md` (user) |
+| 33 | handoff | productivity / 协作 | 把对话压缩成交接文档 | 换会话/换 Agent | QwenWork 部分验证：安装成功，会话内发现/调用失败，新会话未验证 | `skills/productivity/handoff/SKILL.md` (user) |
 | 34 | teach | productivity / 教学 | 把当前目录当有状态教学工作区 | 跨 session 学习 | 未验证 | `skills/productivity/teach/SKILL.md` (user) |
 | 35 | to-questionnaire | productivity / 协作 | 把答不了的决策转成问卷 | 需要他人输入 | 未验证 | `skills/productivity/to-questionnaire/SKILL.md` (user) |
 | 36 | wait-what | productivity / 协作 | 「刚才没讲清，重述一遍」 | 让 Agent 复述 | 未验证 | `skills/productivity/wait-what/SKILL.md` (user) |
-| 37 | writing-for-agents | productivity / 文档 | 为 Agent 写文档（skills/AGENTS.md） | 写技能/规则 | 未验证 | `skills/productivity/writing-for-agents/SKILL.md` (model) |
+| 37 | writing-for-agents | productivity / 文档 | 为 Agent 写文档（skills/AGENTS.md） | 写技能/规则 | QwenWork 部分验证：安装成功，会话内发现/调用失败，新会话未验证 | `skills/productivity/writing-for-agents/SKILL.md` (model) |
 
 > 计数校验：37 = engineering 20 + productivity 7 + misc 4 + in-progress 6；deprecated 0。
 > `.skills/translate-skill/` 是维护者自用翻译技能，不在上表。
