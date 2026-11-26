@@ -11,6 +11,8 @@ verified_against: matt-pocock-skills-zh-cn@7326522
 
 # Matt Pocock Skills 中文定制发行版 · 使用指南
 
+> **锚点注记（2026-11-26）**：frontmatter 的 `verified_against: 7326522` 是作者重写前的 HEAD。2026-11-26 作者重写（公司邮箱 → GitHub noreply）后该 SHA 仅经 refs/original 可达；重写内容保真已验证（tree 集合相等、逐文件一致），当前 HEAD 为 `4e01df4`。本指南结论不受影响。
+
 > 面向使用这个 Skills 库的人。所有技能数量、名称、安装命令均从当前仓库实测（2026-11-23，HEAD `7326522`）。
 > 一句话定位：**Matt Pocock 的 Agent Skills 中文适配 + 定制发行副本**，含翻译、4 处上游回填、兼容性说明与上游同步流程。
 

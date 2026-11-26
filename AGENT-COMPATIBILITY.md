@@ -1,5 +1,7 @@
 # AGENT-COMPATIBILITY.md — 跨 Agent 调用兼容方案
 
+> **更正注记（2026-11-26，D22 审计）**：本文档主体写于建库初期（14 技能精选集时期），以下数字已过时，以实测为准：发布技能 **31**（全仓 37，in-progress 6 不发布）；user-invoked **22** / model-invoked **15**（非 7）；远程 main 已推送至作者重写后的 HEAD（旧 SHA `186e725` 等仅经 refs/original 可达）；「本机 Node v22.22.2」是另一台机器/时期的记录，当前维护机为 v20.19.5（npx 安装器路径在本机不可测）。运行时验证现状见 `docs/HOST-VERIFICATION-2026-11-25.md`（QwenWork 2 技能部分验证，其余未验证）。原文保留不改写。
+
 > 本文档**只做设计**，不修改任何技能文件，也不新增第五处回填。它描述 37 个技能（含 4 处回填）在不同宿主（harness）中的调用方式、能力边界与回退机制。
 >
 > 相关文档：[README](./README.md)（用途与安装）、[UPSTREAM](./UPSTREAM.md)（上游与远程）、[BACKPORTS](./BACKPORTS.md)（四处回填）、[SYNC](./SYNC.md)（同步流程）、[docs/invocation.md](./docs/invocation.md)（仓库自身的 user-invoked / model-invoked 约定）。
