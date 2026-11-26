@@ -10,6 +10,8 @@ A Chinese-adapted and customized distribution of Matt Pocock's Agent Skills, inc
 
 当前磁盘实测：**37 个技能**（engineering 20 / productivity 7 / misc 4 / in-progress 6），plugin 发布 31 个。
 
+> **2026-11-26 提交作者重写**：本仓 8 笔定制提交的作者与 committer 由公司邮箱重写为 `Vin535LFJ <169535939+Vin535LFJ@users.noreply.github.com>`。上游 133 笔历史的作者字段与全部内容逐一致保留（重写前后首父链 tree 序列相同、全历史 tree 集合相等）；因历史重建，其提交 SHA 发生变化（作者与 committer 字段不变）。本地 tag（v1.1.0 / v1.2.3 / v1.3.1）指向重写前提交，未随重写移动。旧 SHA 失效，`refs/original` 保留回滚备份，已 `--force-with-lease` 推送。
+
 ## 为什么需要这个中文版？
 
 - 更好适配中文大语言模型
